@@ -1,14 +1,10 @@
-# ELT-Pipeline-with-dbt-Snowflake-and-Airflow-Unlocking-Customer-Insights
-Here's the `README.md` for your project using **dbt, Snowflake, Airflow, Cosmos, and Docker**:
 
-```markdown
-# **ELT Pipeline with Snowflake, DBT, Apache Airflow, Cosmos, and Docker**
+# ELT Pipeline with Snowflake, DBT, Apache Airflow, Cosmos, and Docker**
 
-🔗 **Author:** Vandana
-📧 **Contact:** [Your Email]  
-🚀 **LinkedIn:** [Your LinkedIn Profile]  
+🔗 Author: Vandana
+📧 Contact: [bvandanareddy8@gmail.com]  
 
-## **Overview**
+## Overview
 This project demonstrates the creation of an **end-to-end ELT pipeline** using **Snowflake, dbt, Apache Airflow, Cosmos, and Docker**. The pipeline extracts data from Snowflake's `tpch` sample data, loads it into staging tables, applies transformations using dbt models, and generates fact tables for analysis. The entire workflow is orchestrated using Apache Airflow and containerized using Docker for reproducibility and ease of deployment.
 
 ## **Tech Stack**
@@ -18,30 +14,7 @@ This project demonstrates the creation of an **end-to-end ELT pipeline** using *
 - **Cosmos** – Integration tool for managing dbt tasks in Airflow
 - **Docker** – Containerization for deploying the pipeline and dependencies
 
-## **Project Structure**
-```
-📂 eltpipeline
- ├── 📂 dags/                   # Airflow DAGs for scheduling and orchestration
- │   ├── dbt_pipeline.py        # DAG for executing dbt transformations
- ├── 📂 dbt_project/            # dbt models and configurations
- │   ├── 📂 models/  
- │   │   ├── staging/           
- │   │   │   ├── stg_tpch_orders.sql  # Staging model for orders
- │   │   │   ├── stg_tpch_line_items.sql  # Staging model for line items
- │   │   ├── marts/             
- │   │   │   ├── int_order_items_summary.sql  # Aggregated order data
- │   │   │   ├── fct_orders.sql  # Fact model for final orders
- ├── 📂 macros/                 # Custom dbt macros
- │   ├── pricing.sql            # Macro for calculating discounted amounts
- ├── 📂 tests/                  # Custom tests for dbt models
- │   ├── fct_orders_discount.sql  # Singular test for discount validation
- ├── profiles.yml               # DBT connection profile for Snowflake
- ├── Dockerfile                 # Dockerfile for building the container image
- ├── requirements.txt           # Python dependencies for Airflow and dbt
- ├── README.md                  # Project documentation
-```
-
-## **Workflow**
+## Workflow
 
 1. **Data Ingestion & Storage**  
    - Load data from Snowflake's `tpch_sf1` schema (`orders` and `lineitem` tables) into Snowflake staging tables using dbt's **`source`** functionality.
